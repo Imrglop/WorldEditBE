@@ -22,11 +22,11 @@ WorldEditBE has the following features:
 
 Load WorldEditBE.dll into the game using any dll loader. Join a local world. You will be able to use the chat commands. The prefix is: `-`
 
-Tip: TO get a list of commands, run `-help`
+*Tip: To get a list of commands, run `-help`*
 
 To set position 1 and position 2, get a wand. To set position 1, destroy a block. Right click a block to set position 2.
 
-*To remove the mod from the game, run the `-eject` command*
+*Tip: To remove the mod from the game, run the `-eject` command*
 
 ## Block Patterns
 
