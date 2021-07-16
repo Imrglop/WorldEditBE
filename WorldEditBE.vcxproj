@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{bc01c19a-bff0-4645-82e3-5f0241086099}</ProjectGuid>
+    <RootNamespace>WorldEditBE</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(ProjectDir)Depends\MinHook\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(ProjectDir)Depends\MinHook\bin;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <LibraryPath>$(SolutionDir)Depends\MinHook\bin;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;WORLDEDITBE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;WORLDEDITBE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;WORLDEDITBE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>MinHook.x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;WORLDEDITBE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Depends\MinHook\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>MinHook.x64.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Command\Commands\SetCommand.cpp" />
+    <ClCompile Include="Command\Commands\CutCommand.cpp" />
+    <ClCompile Include="Command\Commands\EjectCommand.cpp" />
+    <ClCompile Include="Command\Commands\HelpCommand.cpp" />
+    <ClCompile Include="Minecraft\Game\Random.cpp" />
+    <ClCompile Include="Command\Commands\WallsCommand.cpp" />
+    <ClCompile Include="Command\Commands\ReplaceCommand.cpp" />
+    <ClCompile Include="Command\Commands\WandCommand.cpp" />
+    <ClCompile Include="Command\Commands\UpCommand.cpp" />
+    <ClCompile Include="Command\Commands\SphereCommand.cpp" />
+    <ClCompile Include="WorldEdit\BlockWrapper.cpp" />
+    <ClCompile Include="Command\CommandManager.cpp" />
+    <ClCompile Include="Command\Command.cpp" />
+    <ClCompile Include="Core\main.cpp" />
+    <ClCompile Include="Core\Logger.cpp" />
+    <ClCompile Include="Depends\Config\Config.cpp" />
+    <ClCompile Include="Depends\SigScanner\SignatureScanner.cpp" />
+    <ClCompile Include="Depends\VTHook\vtable_hook.cpp" />
+    <ClCompile Include="File\FileStorage.cpp" />
+    <ClCompile Include="Command\Commands\PosCommand.cpp" />
+    <ClCompile Include="Minecraft\Block\BlockSource.cpp" />
+    <ClCompile Include="Minecraft\Game\Minecraft.cpp" />
+    <ClCompile Include="Minecraft\Inventory\ItemStack.cpp" />
+    <ClCompile Include="Utils\Game.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
+    <ClCompile Include="WorldEdit\WorldEdit.cpp" />
+    <ClCompile Include="WorldEdit\WorldTask.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Command\Commands\SetCommand.h" />
+    <ClInclude Include="Command\Commands\CutCommand.h" />
+    <ClInclude Include="Command\Commands\EjectCommand.h" />
+    <ClInclude Include="Command\Commands\HelpCommand.h" />
+    <ClInclude Include="Minecraft\Game\Random.h" />
+    <ClInclude Include="Command\Commands\WallsCommand.h" />
+    <ClInclude Include="Command\Commands\ReplaceCommand.h" />
+    <ClInclude Include="Command\Commands\WandCommand.h" />
+    <ClInclude Include="Command\Commands\UpCommand.h" />
+    <ClInclude Include="Command\Commands\SphereCommand.h" />
+    <ClInclude Include="WorldEdit\BlockWrapper.h" />
+    <ClInclude Include="Command\CommandManager.h" />
+    <ClInclude Include="Command\Command.h" />
+    <ClInclude Include="Core\Logger.h" />
+    <ClInclude Include="Core\main.h" />
+    <ClInclude Include="Core\shared.h" />
+    <ClInclude Include="Depends\Config\Config.h" />
+    <ClInclude Include="Depends\MinHook\include\MinHook.h" />
+    <ClInclude Include="Depends\SigScanner\SignatureScanner.h" />
+    <ClInclude Include="Depends\VTHook\vtable_hook.h" />
+    <ClInclude Include="File\FileStorage.h" />
+    <ClInclude Include="Minecraft\Block\Block.h" />
+    <ClInclude Include="Minecraft\Block\BlockLegacy.h" />
+    <ClInclude Include="Minecraft\Block\BlockPos.h" />
+    <ClInclude Include="Minecraft\Block\BlockSource.h" />
+    <ClInclude Include="Minecraft\CFunctions.h" />
+    <ClInclude Include="Minecraft\CTypes.h" />
+    <ClInclude Include="Minecraft\Entity\CCollisionBox.h" />
+    <ClInclude Include="Minecraft\Entity\CNamespacedID.h" />
+    <ClInclude Include="Minecraft\Entity\Actor.h" />
+    <ClInclude Include="Minecraft\Entity\LocalPlayer.h" />
+    <ClInclude Include="Minecraft\Entity\Mob.h" />
+    <ClInclude Include="Minecraft\Entity\Player.h" />
+    <ClInclude Include="Minecraft\Game\ClientInstance.h" />
+    <ClInclude Include="Minecraft\Game\GameMode.h" />
+    <ClInclude Include="Minecraft\Game\Minecraft.h" />
+    <ClInclude Include="Minecraft\Game\ServerInstance.h" />
+    <ClInclude Include="Minecraft\Inventory\Item.h" />
+    <ClInclude Include="Minecraft\Inventory\ItemDescriptor.h" />
+    <ClInclude Include="Minecraft\Inventory\ItemStack.h" />
+    <ClInclude Include="Minecraft\Inventory\ItemStackBase.h" />
+    <ClInclude Include="Minecraft\Inventory\PlayerInventory.h" />
+    <ClInclude Include="Command\Commands\PosCommand.h" />
+    <ClInclude Include="Minecraft\NBT\CompoundTag.h" />
+    <ClInclude Include="Minecraft\shared.h" />
+    <ClInclude Include="Minecraft\String\Text.h" />
+    <ClInclude Include="Minecraft\Vector\AABB.h" />
+    <ClInclude Include="Minecraft\Vector\CRotation.h" />
+    <ClInclude Include="Minecraft\Vector\Vec2.h" />
+    <ClInclude Include="Minecraft\Vector\Vec3.h" />
+    <ClInclude Include="Minecraft\World\Level.h" />
+    <ClInclude Include="Utils\Game.h" />
+    <ClInclude Include="Utils\Utils.h" />
+    <ClInclude Include="WorldEdit\all_minecraft_headers.h" />
+    <ClInclude Include="WorldEdit\WorldEdit.h" />
+    <ClInclude Include="WorldEdit\WorldTask.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
