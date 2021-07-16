@@ -97,8 +97,6 @@ void __cdecl sendChatMessageHook(void* rbp, Minecraft::Text* chatText, size_t b1
             return;
         }
         if (txt.substr(0, 5) == "-say ") {
-            auto supplies = localPlayer->getSupplies();
-
             chatText->str() = txt.substr(5);
             return sendChatMessage(rbp, chatText, b1, b2, pInt1, a1, a2);
         }
