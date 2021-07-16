@@ -175,7 +175,6 @@ void WorldEdit::initHooks()
     static uintptr_t sendChatFunc = FindSignature("48 89 5c 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8d ac 24 ? ? ? ? 48 81 ec ? ? ? ? 48 8b 05 ? ? ? ? 48 33 c4 48 89 85 ? ? ? ? 4c 8b ea 4c 8b f9 48 8b 49");
     static uintptr_t gameModeSig = FindSignature("48 8D 05 ? ? ? ? 48 8B D9 48 89 01 8B FA 48 8B 89 ? ? ? ? 48 85 C9 74 ? 48 8B 01 BA ? ? ? ? FF 10 48 8B 8B");
     static uintptr_t itemStackUseFunc = FindSignature("40 53 55 56 57 48 83 ec ? 48 8b 41");
-    static uintptr_t player_getInvFunc = FindSignature("45 84 c0 75 ? 48 8b 89 ? ? ? ? 48 8b 01");
     static uintptr_t clientInstanceSig = FindSignature("48 8B 15 ? ? ? ? 4C 8B 02 4C 89 06 40 84 FF 74 ? 48 8B CD E8 ? ? ? ? 48 8B C6 48 8B 4C 24 ? 48 33 CC E8 ? ? ? ? 48 8B 5C 24 ? 48 8B 6C 24 ? 48 8B 74 24 ? 48 83 C4 ? 5F C3 B9 ? ? ? ? E8 ? ? ? ? CC E8 ? ? ? ? CC CC CC CC CC CC CC CC CC CC CC 48 89 5C 24 ? 48 89 6C 24 ? 56");
     static uintptr_t itemStackBase_getDescriptorFunc = FindSignature("48 89 5c 24 ? 48 89 74 24 ? 57 48 81 ec ? ? ? ? 48 8b 05 ? ? ? ? 48 33 c4 48 89 84 24 ? ? ? ? 48 8b da 48 8b f9 48 89 54 24 ? 48 8b 51");
     static uintptr_t setBlockFunc = FindSignature("4c 8b dc 49 89 5b ? 55 56 57 41 54 41 55 41 56 41 57 48 83 ec ? 45 8b e9");
