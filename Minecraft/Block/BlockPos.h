@@ -30,9 +30,9 @@ struct BlockPos {
 		return (other[0] == this->x && other[1] == this->y && other[2] == this->z);
 	}
 	inline void set(Vec3& other) {
-		this->x = (int)other.x;
-		this->y = (int)other.y;
-		this->z = (int)other.z;
+		this->x = (int)std::round(other.x);
+		this->y = (int)std::round(other.y);
+		this->z = (int)std::round(other.z);
 	}
 	inline void set(BlockPos& other) {
 		this->x = other.x;

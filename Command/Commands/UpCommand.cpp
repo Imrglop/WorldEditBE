@@ -20,13 +20,9 @@ bool UpCommand::run(std::string label, std::vector<std::string> args)
 
 	std::string numArg = args[0];
 	int num = std::stoi(numArg); // exception will be catched
-	
-	Vec3 plrPos = global.clientInstance->localPlayer->getPos();
-	plrPos.y += num;
 
-	// Spawn in the middle of the block
-	plrPos.x += 0.5F;
-	plrPos.z += 0.5F;
+	Vec3 plrPos = global.clientInstance->localPlayer->getPos();
+	plrPos.y += num + 0.5f;
 
 	global.localServerPlayer->setPos(plrPos);
 	global.clientInstance->localPlayer->setPos(plrPos);
@@ -38,11 +34,8 @@ bool UpCommand::run(std::string label, std::vector<std::string> args)
 	pos.y -= 2;
 	rg->setBlock(&pos, glassBlock, 3, nullptr, nullptr);
 
-	// Correct position from getPos()
 	if (pos.x < 0)
 		pos.x -= 1;
-	if (pos.y < 0)
-		pos.y -= 1;
 	if (pos.z < 0)
 		pos.z -= 1;
 
