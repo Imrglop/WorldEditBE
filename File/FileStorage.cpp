@@ -1,9 +1,14 @@
 #include "FileStorage.h"
 #include <fstream>
 
-FileStorage::FileStorage(std::string appData) 
+FileStorage::FileStorage(std::string appData)
 {
 	this->appDataPath = appData;
+}
+
+FileStorage::~FileStorage()
+{
+	delete this->settings;
 }
 
 bool FileStorage::init()
@@ -12,12 +17,12 @@ bool FileStorage::init()
 
 	std::string dir = appDataPath + "\\WorldEdit";
 	BOOL result = CreateDirectoryA(dir.c_str(), NULL);
-/*	if (!result) {
-		if (result != ERROR_ALREADY_EXISTS) {
-			return false;
-		}
-	}*/
-	// -------------- FILES --------------
+	/*	if (!result) {
+			if (result != ERROR_ALREADY_EXISTS) {
+				return false;
+			}
+		}*/
+		// -------------- FILES --------------
 
 	std::string settingsFile = dir + "\\settings.txt";
 	settings = new Config(settingsFile, "");

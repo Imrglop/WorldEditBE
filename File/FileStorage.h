@@ -11,7 +11,7 @@ private:
 	std::string appDataPath;
 public:
 	FileStorage(std::string appData);
+	~FileStorage();
 	bool init();
 	Config* getSettings();
 };
-
